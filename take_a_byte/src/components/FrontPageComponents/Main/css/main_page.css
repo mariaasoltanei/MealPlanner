@@ -1,0 +1,71 @@
+.div_main_content {
+    height: 100%;
+    width: 75%;
+    right: 10px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.gradient_background{
+    height: 97vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    position: absolute;
+    background: linear-gradient(#C6E4C9, #61C5BD);
+    align-items: center;
+}
+
+#imageFront {
+    width: 50%;
+    height: 70%;
+    right: 0px;
+    position: absolute;
+    padding: 10px;
+}
+
+.mainText{
+    width: 32%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 30px;
+}
+#frontText{
+    font-family: "Roboo Black";
+    font-size: 30px;
+    color: #0b5a5c;
+}
+
+#differentFont{
+    font-family: "BD Geminis";
+    font-size: 30px;
+    color: #4a8fb1;
+}
+
+.btn-get-started{
+    background: #FFFFFF;
+    border-radius: 999px;
+    box-sizing: border-box;
+    border: none;
+    color: #61c5bd;
+    cursor: pointer;
+    font-family: "Roboo Black";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 8px 18px;
+    width: 140px;
+    align-self: start;
+}
+

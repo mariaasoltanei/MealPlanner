@@ -1,0 +1,109 @@
+/*NAVIGATION MENU
+navMenu*/
+
+.div_navigation_menu {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: white;
+    left: 0px;
+}
+/*logo*/
+
+#logo {
+    height: 80px;
+    width: 120px;
+    margin: 0 auto;
+}
+
+
+/*navLinks*/
+
+.navLinks {
+    list-style-type: none;
+}
+
+.navLinks li {
+    padding-top: 5px;
+}
+.navLinks p {
+    font-family: "Lato Regular";
+    font-size: 17px;
+    float: right;
+
+}
+.navLinks span {
+    display:inline-block;
+    vertical-align: middle;
+}
+.navLinks img{
+    height: 30px;
+    width: 20px;
+    padding-right: 12px;
+    padding-top: 10px;
+    float: left;
+    align-content: center;
+}
+
+
+/*accountButtons*/
+
+.accountButtons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+
+/*btn-log-in*/
+
+#btn-log-in {
+    background: #c1f8cf;
+    border-radius: 999px;
+    border: none;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Lato Regular";
+    font-size: 16px;
+    line-height: 18px;
+    padding: 8px 18px;
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+
+/*btn-sign-up*/
+
+#btn-sign-up {
+    background: #4fd3c4;
+    border-radius: 999px;
+    border: none;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Lato Regular";
+    font-size: 16px;
+    line-height: 18px;
+    padding: 8px 18px;
+    width: 120px;
+}
+
+/*socials*/
+
+.socials {
+    list-style: none;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+}
+
+.socials img {
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+    padding-right: 15px;
+}
+

@@ -1,0 +1,10 @@
+.div_steps_get_started {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+

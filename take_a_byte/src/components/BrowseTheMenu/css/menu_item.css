@@ -1,0 +1,51 @@
+.div_menu_item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle_image {
+    height: 55%;
+    width: 35%;
+    border-radius: 999px;
+    border: 2px solid #0b5a5c;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.item_image {
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+}
+
+.div_square_item {
+    height: 85%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid #0b5a5c;
+    margin-top: -50px;
+}
+.div_menu_info {
+    height: 70%;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.div_menu_info p{
+    margin: 0 auto;
+}
+
+.div_menu_info h3 {
+    text-align: center;
+    font-family: "Roboo Black";
+}

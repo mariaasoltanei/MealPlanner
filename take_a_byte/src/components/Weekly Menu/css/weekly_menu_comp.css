@@ -1,0 +1,70 @@
+.div_weeklyMenu_component{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle_image_wm {
+    height: 30%;
+    width: 40%;
+    border-radius: 999px;
+    border: 2px solid #0b5a5c;
+    z-index: 1;
+    margin-top: 10px;
+}
+.circle_image_wm img {
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+}
+
+.div_square_item_wm {
+    height: 70%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid #0b5a5c;
+    margin-top: -70px;
+}
+
+.div_wmenu_info {
+    height: 70%;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.div_meal {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header_meal{
+    font-family: "Roboo Black";
+    margin: 0 auto;
+    text-align: center;
+}
+
+.div_text {
+    font-size: 14px;
+    text-align: center;
+    margin: 1px auto;
+}
+.btn_wm_add_cart {
+    height: 50px;
+    width: 35px;
+    border-radius: 99px;
+    border: none;
+    background: #61c5bd;
+    color: white;
+    border: 0.3px solid #0b5a5c;
+}

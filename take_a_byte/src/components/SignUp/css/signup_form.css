@@ -1,0 +1,36 @@
+.div_signup_form {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup_label {
+    margin-left: 155px;
+}
+
+.div_signup_form input {
+    width: 45%;
+    border-radius: 5px;
+    align-self: center;
+    border: 2px solid #0b5a5c;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+#btn_signup_form {
+    align-self: center;
+    background: #4fd3c4;
+    border-radius: 999px;
+    border: none;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Lato Regular";
+    font-size: 16px;
+    line-height: 18px;
+    padding: 8px 18px;
+    width: 120px;
+    margin-bottom: 15px;
+}
+

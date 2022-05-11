@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: "Lato Regular";
+  src: local("Lato-Regular"),
+  url("assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboo Black";
+  src: local("Roboto-Black"),
+  url("assets/fonts/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BD Geminis";
+  src: local("BD-Geminis"),
+  url("assets/fonts/BD_Geminis.otf") format("truetype");
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
