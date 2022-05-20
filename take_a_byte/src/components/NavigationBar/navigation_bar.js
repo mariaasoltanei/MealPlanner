@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useContext} from "react";
 import './navigation_bar.css';
 import logo from '../../assets/images/Asset 1.png'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import iconCart from '../../assets/images/iconCart.png'
+import {UserContext} from "../../context/user_context";
+import profiileIcon from "../../assets/images/profile_icon.png"
+
 
 
 function NavigationBar() {
+    const {user, setUser} = useContext(UserContext);
     const linksStyle = {
         color: 'black',
         textDecoration: 'none'
     };
+    let navigate = useNavigate();
+    const seeProfile = () => {
+        navigate("../pages/user_profile");
+    }
     return (
         <div className="div_navBar">
             <div className="div_logo">
@@ -38,13 +46,27 @@ function NavigationBar() {
 
             </div>
             <div className="div_buttons">
-                <Link to="../pages/log_in">
-                    <button id="btn_login">Log in</button>
-                </Link>
-                <Link to="../pages/sign_up">
-                    <button id="btn_signup">Sign up</button>
-                </Link>
-
+                {
+                    user ? (
+                        <>
+                            <img id = "profile_icon" src = {profiileIcon} onClick={seeProfile}/>
+                            <p>Welcome, </p>
+                            <h4>{user.firstName}!</h4>
+                            <Link to="/">
+                                <button id="btn_signup" onClick={() => setUser(null)}>Log out</button>
+                            </Link>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="../pages/log_in">
+                                <button id="btn_login">Log in</button>
+                            </Link>
+                            <Link to="../pages/sign_up">
+                                <button id="btn_signup">Sign up</button>
+                            </Link>
+                        </>
+                    )
+                }
             </div>
             <div className="div_cart">
                 <img id="icon_cart" src={iconCart}/>
@@ -54,85 +76,3 @@ function NavigationBar() {
 }
 
 export default NavigationBar;
-/*
-            <Link style={linksStyle} to="/">
-                <img id="logo_navBar" src={logo}/>
-            </Link>
-            <nav>
-                <ul className="ul_navBar">
-                    <Link style={linksStyle} to="../pages/browse_menu">
-                        <li>
-                            <p>BROWSE THE MENU</p>
-                        </li>
-                    </Link>
-                    <Link style={linksStyle} to="../pages/weekly_menu">
-                        <li>
-                            <p>WEEKLY MENU</p>
-                        </li>
-                    </Link>
-                    <Link style={linksStyle} to="../pages/about">
-                        <li>
-                            <p>ABOUT US</p>
-                        </li>
-                    </Link>
-                    <Link style={linksStyle} to="../pages/contact">
-                        <li>
-                            <p>CONTACT US</p>
-                        </li>
-                    </Link>
-
-                    <Link style={linksStyle} to="../pages/faq">
-                        <li>
-                            <p>FAQ</p>
-                        </li>
-                    </Link>
-                    <div className="div_btn_navBar">
-                        <Link to="../pages/log_in">
-                            <li>
-                                <button style={{marginBottom: "0px"}} id="btn-log-in">Log in</button>
-                            </li>
-                        </Link>
-                        <Link to="../pages/sign_up">
-                            <li>
-                                <button id="btn-sign-up">Sign up</button>
-                            </li>
-                        </Link>
-                    </div>
-                </ul>
-            </nav>
-
-
-
-
-
-
-#logo_navBar {
-    height: 50px;
-    width: 90px;
-    float: left;
-    margin-left: 50px;
-}
-
-
-.ul_navBar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style-type: none;
-}
-.ul_navBar li{
-    padding-left: 25px;
-}
-.ul_navBar p {
-    font-family: "Lato Regular";
-    font-size: 17px;
-}
-
-
-.div_btn_navBar {
-    right: 0px;
-    float: right;
-    display: flex;
-    flex-direction: row;
-}
- */

@@ -16,7 +16,7 @@ function ContactForm() {
             email: email.value,
             message: message.value,
         };
-        let response = await fetch("http://localhost:5000/pages/contact", {
+        let response = await fetch("http://localhost:3000/pages/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",

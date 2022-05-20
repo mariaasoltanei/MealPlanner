@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .login_form input {
@@ -31,4 +31,9 @@
     padding: 8px 18px;
     width: 120px;
     margin-bottom: 15px;
+}
+#p_err_login{
+    font-size: 14px;
+    font-family: "Lato Regular";
+    align-self: center;
 }

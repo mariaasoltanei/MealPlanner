@@ -4,6 +4,7 @@ import {InputAdornment, TextField} from "@mui/material";
 import searchIcon from '../../assets/images/search_icon.png'
 
 function SearchQuestion() {
+    //TODO 2: IMPLEMENT SEARCH BAR
     return (
         <div className="div_search_area">
             <div className="div_search_gradient">

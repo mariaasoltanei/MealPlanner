@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Route, Routes} from "react-router-dom";
+import React, {Component, useMemo, useState} from "react";
+import {Route, Routes} from "react-router-dom";
 import './App.css';
 import BrowseMenu from "./pages/browse_menu";
 import WeeklyMenu from "./pages/weekly_menu";
@@ -10,15 +10,15 @@ import HomePage from "./pages/home";
 import LogIn from "./pages/log_in";
 import SignUp from "./pages/sign_up";
 import MenuItemDetails from "./pages/menu_item_details";
+import {UserContext} from "./context/user_context";
+import UserProfile from "./pages/user_profile";
 
-class App extends Component {
-    state = {
-        data: null
-    };
-
-    componentDidMount() {
+function App() {
+    const [user, setUser] = useState(null);
+ const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+    /*componentDidMount() {
         this.callBackendAPI()
-            .then(res => this.setState({ data: res.express }))
+            .then(res => this.setState({data: res.express}))
             .catch(err => console.log(err));
     }
 
@@ -30,24 +30,29 @@ class App extends Component {
             throw Error(body.message)
         }
         return body;
-    };
-    render() {
+    };*/
+    //render() {
+
         return (
             <div className="App">
-                <Routes>
-                    <Route path="/" element={<HomePage/>}/>
-                    <Route path="/pages/browse_menu" element={<BrowseMenu/>}/>
-                    <Route path="/pages/weekly_menu" element={<WeeklyMenu/>}/>
-                    <Route path="/pages/about" element={<About/>}/>
-                    <Route path="/pages/contact" element={<Contact/>}/>
-                    <Route path="/pages/faq" element={<Faq/>}/>
-                    <Route path="/pages/log_in" element={<LogIn/>}/>
-                    <Route path="/pages/sign_up" element={<SignUp/>}/>
-                    <Route path="/pages/:menuItemID" element={<MenuItemDetails/>}/>
-                </Routes>
-
+                <UserContext.Provider value={value}>
+                    <Routes>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/pages/browse_menu" element={<BrowseMenu/>}/>
+                        <Route path="/pages/weekly_menu" element={<WeeklyMenu/>}/>
+                        <Route path="/pages/about" element={<About/>}/>
+                        <Route path="/pages/contact" element={<Contact/>}/>
+                        <Route path="/pages/faq" element={<Faq/>}/>
+                        <Route path="/pages/log_in" element={<LogIn/>}/>
+                        <Route path="/pages/sign_up" element={<SignUp/>}/>
+                        <Route path="/pages/:menuItemID" element={<MenuItemDetails/>}/>
+                        <Route path="/pages/user_profile" element={<UserProfile/>}/>
+                    </Routes>
+                </UserContext.Provider>
             </div>
         );
-    }
+    //}
+    ///pages/user_profile
 }
+
 export default App;
