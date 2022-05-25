@@ -43,4 +43,18 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-around;
+}
+.btn_add_cart {
+    background: #4fd3c4;
+    border-radius: 999px;
+    border: none;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Lato Regular";
+    font-size: 16px;
+    line-height: 18px;
+    padding: 8px 18px;
+    width: 120px;
+    margin-bottom: 15px;
 }

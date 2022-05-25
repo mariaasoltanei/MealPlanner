@@ -10,31 +10,19 @@ import HomePage from "./pages/home";
 import LogIn from "./pages/log_in";
 import SignUp from "./pages/sign_up";
 import MenuItemDetails from "./pages/menu_item_details";
-import {UserContext} from "./context/user_context";
 import UserProfile from "./pages/user_profile";
+import Cart from "./pages/cart_page";import {Provider} from 'react-redux'
+import store from './redux/store'
+import {UserContext} from "./context/user_context";
+import {StateContext} from "./context/state_context";
 
 function App() {
     const [user, setUser] = useState(null);
  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
-    /*componentDidMount() {
-        this.callBackendAPI()
-            .then(res => this.setState({data: res.express}))
-            .catch(err => console.log(err));
-    }
-
-    callBackendAPI = async () => {
-        const response = await fetch('/api');
-        const body = await response.json();
-
-        if (response.status !== 200) {
-            throw Error(body.message)
-        }
-        return body;
-    };*/
-    //render() {
 
         return (
             <div className="App">
+                <StateContext>
                 <UserContext.Provider value={value}>
                     <Routes>
                         <Route path="/" element={<HomePage/>}/>
@@ -47,12 +35,14 @@ function App() {
                         <Route path="/pages/sign_up" element={<SignUp/>}/>
                         <Route path="/pages/:menuItemID" element={<MenuItemDetails/>}/>
                         <Route path="/pages/user_profile" element={<UserProfile/>}/>
+                        <Route path="/pages/cart_page" element={<Cart/>}/>
                     </Routes>
+
                 </UserContext.Provider>
+                </StateContext>
+
             </div>
         );
-    //}
-    ///pages/user_profile
 }
 
 export default App;

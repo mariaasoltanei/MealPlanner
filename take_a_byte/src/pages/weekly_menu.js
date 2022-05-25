@@ -9,10 +9,10 @@ const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
 const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
 const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
 const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = mariaYAHOO
+const KEY = mariaGmailKEY
 function WeeklyMenu() {
-    const numberOfItems = 2;
-    const weekNO = 1;
+    const numberOfItems = 10;
+    const weekNO = 5;
     //ENDPOINTS INFO -> type = breakfast, main course, salad ; diet = signature -> whole30 vegetarian -> vegetarian vegan -> vegan
     const signatureBreakfastEndpoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=breakfast&diet=whole30&apiKey=${KEY}&addRecipeInformation=false`
     const vegetarianBreakfastEndpoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=breakfast&diet=vegetarian&apiKey=${KEY}&addRecipeInformation=false`

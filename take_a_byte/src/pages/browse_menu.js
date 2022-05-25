@@ -11,13 +11,13 @@ const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
 const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
 const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
 const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = anaYahooKEY
+const KEY = mariaGmailKEY
 
 function BrowseMenu() {
+    //TODO CHANGE BUTTONS FOR FILTER
     const [recipe, setRecipe] = useState(null);
     const [filteredRecipe, setFilteredRecipe] = useState(null);
     const [showFilteredRecipe, setShowFilteredRecipe] = useState(null);
-    const [showRecipe, setShowRecipe] = useState(false);
     const linksStyle = {
         color: 'black',
         textDecoration: 'none'
@@ -26,8 +26,9 @@ function BrowseMenu() {
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?number=40&apiKey=${KEY}&addRecipeInformation=true`)
             .then(res => {
                 const r = res.data.results;
+                setFilteredRecipe(r);
+                setShowFilteredRecipe(true);
                 setRecipe(r);
-                setShowRecipe(true);
             })
     }, []);
 

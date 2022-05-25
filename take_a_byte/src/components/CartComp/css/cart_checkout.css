@@ -1,0 +1,19 @@
+.div_cart_checkout {
+    height: 80%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    border: 2px solid #0b5a5c;
+    border-radius: 20px;
+
+}
+#h3_checkout{
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
+#free {
+    margin-left: 20px;
+    align-self: flex-start;
+}

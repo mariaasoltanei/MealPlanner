@@ -26,6 +26,13 @@ database.connect(function (err) {
 });
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.post("/pages/cart_page", (req, res) => {
+    const userID = req.body.userID;
+    const sqlInsertOrder = "INSERT INTO orders (users_id) VALUES (?);";
+    database.query(sqlInsertOrder, [userID], (err, result) => {
+        if(err) console.log(err);
+    });
+});
 app.post("/pages/sign_up", (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;

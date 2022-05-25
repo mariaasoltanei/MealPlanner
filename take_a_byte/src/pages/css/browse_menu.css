@@ -57,4 +57,7 @@
     font-family: "Lato Regular";
     margin-right: 20px;
     font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: grab;
 }

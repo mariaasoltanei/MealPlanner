@@ -1,15 +1,16 @@
 import React, {useContext} from "react";
-import './navigation_bar.css';
+import './css/navigation_bar.css';
 import logo from '../../assets/images/Asset 1.png'
 import {Link, useNavigate} from "react-router-dom";
 import iconCart from '../../assets/images/iconCart.png'
 import {UserContext} from "../../context/user_context";
 import profiileIcon from "../../assets/images/profile_icon.png"
-
+import {Button} from "@mui/material";
 
 
 function NavigationBar() {
     const {user, setUser} = useContext(UserContext);
+    //const state = useSelector((state) => state.handleCart);
     const linksStyle = {
         color: 'black',
         textDecoration: 'none'
@@ -49,7 +50,7 @@ function NavigationBar() {
                 {
                     user ? (
                         <>
-                            <img id = "profile_icon" src = {profiileIcon} onClick={seeProfile}/>
+                            <img id="profile_icon" src={profiileIcon} onClick={seeProfile}/>
                             <p>Welcome, </p>
                             <h4>{user.firstName}!</h4>
                             <Link to="/">
@@ -69,7 +70,11 @@ function NavigationBar() {
                 }
             </div>
             <div className="div_cart">
-                <img id="icon_cart" src={iconCart}/>
+                <Link style={linksStyle} to="../pages/cart_page">
+                    <Button>
+                        <img id="img_cart" src={iconCart}/>
+                    </Button>
+                </Link>
             </div>
         </div>
     );
