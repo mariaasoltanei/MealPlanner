@@ -9,7 +9,7 @@ const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
 const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
 const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
 const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = mariaGmailKEY
+const KEY = anaYahooKEY
 function WeeklyMenu() {
     const numberOfItems = 10;
     const weekNO = 5;
