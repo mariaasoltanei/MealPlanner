@@ -2,10 +2,11 @@ import React, {useContext} from "react";
 import './css/navigation_bar.css';
 import logo from '../../assets/images/Asset 1.png'
 import {Link, useNavigate} from "react-router-dom";
-import iconCart from '../../assets/images/iconCart.png'
+import iconCart from '../../assets/images/heart-icon.png'
 import {UserContext} from "../../context/user_context";
 import profiileIcon from "../../assets/images/profile_icon.png"
 import {Button} from "@mui/material";
+import mealPlanLogo from '../../assets/images/mealPlanLogo.png'
 
 
 function NavigationBar() {
@@ -32,7 +33,7 @@ function NavigationBar() {
                 </Link>
 
                 <Link style={linksStyle} to="../pages/weekly_menu">
-                    <p className="p_link">WEEKLY MENU</p>
+                    <p className="p_link">MEAL PLANS</p>
                 </Link>
                 <Link style={linksStyle} to="../pages/about">
                     <p className="p_link">ABOUT US</p>
@@ -73,6 +74,13 @@ function NavigationBar() {
                 <Link style={linksStyle} to="../pages/cart_page">
                     <Button>
                         <img id="img_cart" src={iconCart}/>
+                    </Button>
+                </Link>
+            </div>
+            <div className="div_cart">
+                <Link style={linksStyle} to="../pages/mealplan_page">
+                    <Button>
+                        <img id="img_cart" src={mealPlanLogo}/>
                     </Button>
                 </Link>
             </div>

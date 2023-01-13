@@ -11,7 +11,7 @@ const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
 const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
 const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
 const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = anaYahooKEY
+const KEY = remusGmailKEY
 
 function BrowseMenu() {
     //TODO CHANGE BUTTONS FOR FILTER
@@ -62,11 +62,12 @@ function BrowseMenu() {
                 <div className="div_recipe_items">
                     <Grid container spacing={1} className="recipes_grid_container">
                         {
-                            showFilteredRecipe && filteredRecipe.map(r => (<Grid item className="grid_item" xs={4} sm={6} md={3}>
-                                <Link style={linksStyle} to={`/pages/${r.id}`}><MenuItem title={r.title} image={r.image}
-                                                                                         time={r.readyInMinutes}
-                                                                                         rating={r.aggregateLikes / 100}/></Link>
-                            </Grid>))
+                            showFilteredRecipe && filteredRecipe.map(r => (
+                                <Grid item className="grid_item" xs={4} sm={6} md={3}>
+                                    <Link style={linksStyle} to={`/pages/${r.id}`}><MenuItem title={r.title} image={r.image}
+                                                                                             time={r.readyInMinutes}
+                                                                                             rating={r.aggregateLikes / 100}/></Link>
+                                </Grid>))
                         }
                     </Grid>
                 </div>

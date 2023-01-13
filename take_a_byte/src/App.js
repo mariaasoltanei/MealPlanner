@@ -1,4 +1,4 @@
-import React, {Component, useMemo, useState} from "react";
+import React, {useMemo, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import './App.css';
 import BrowseMenu from "./pages/browse_menu";
@@ -11,18 +11,19 @@ import LogIn from "./pages/log_in";
 import SignUp from "./pages/sign_up";
 import MenuItemDetails from "./pages/menu_item_details";
 import UserProfile from "./pages/user_profile";
-import Cart from "./pages/cart_page";import {Provider} from 'react-redux'
-import store from './redux/store'
+import Cart from "./pages/cart_page";
 import {UserContext} from "./context/user_context";
 import {StateContext} from "./context/state_context";
+import MealPlanConfig from "./pages/mealplan_page";
+import GenerateMealPlan from "./pages/generate_mealplan";
 
 function App() {
     const [user, setUser] = useState(null);
- const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+    const value = useMemo(() => ({user, setUser}), [user, setUser]);
 
-        return (
-            <div className="App">
-                <StateContext>
+    return (
+        <div className="App">
+            <StateContext>
                 <UserContext.Provider value={value}>
                     <Routes>
                         <Route path="/" element={<HomePage/>}/>
@@ -36,13 +37,15 @@ function App() {
                         <Route path="/pages/:menuItemID" element={<MenuItemDetails/>}/>
                         <Route path="/pages/user_profile" element={<UserProfile/>}/>
                         <Route path="/pages/cart_page" element={<Cart/>}/>
+                        <Route path="/pages/mealplan_page" element={<MealPlanConfig/>}/>
+                        <Route path="/pages/generate_mealplan" element={<GenerateMealPlan/>}/>
                     </Routes>
 
                 </UserContext.Provider>
-                </StateContext>
+            </StateContext>
 
-            </div>
-        );
+        </div>
+    );
 }
 
 export default App;
