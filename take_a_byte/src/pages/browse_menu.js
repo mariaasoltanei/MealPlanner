@@ -11,7 +11,7 @@ const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
 const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
 const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
 const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = remusGmailKEY
+const KEY = mariaGmailKEY
 
 function BrowseMenu() {
     //TODO CHANGE BUTTONS FOR FILTER
@@ -23,7 +23,7 @@ function BrowseMenu() {
         textDecoration: 'none'
     };
     useEffect(() => {
-        axios.get(`https://api.spoonacular.com/recipes/complexSearch?number=40&apiKey=${KEY}&addRecipeInformation=true`)
+        axios.get(`https://api.spoonacular.com/recipes/complexSearch?number=50&apiKey=${KEY}&addRecipeInformation=true`)
             .then(res => {
                 const r = res.data.results;
                 setFilteredRecipe(r);
