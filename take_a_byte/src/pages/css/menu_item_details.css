@@ -36,6 +36,7 @@
     height: 100%;
     width: 100%;
     border-radius: 20px;
+    object-fit: cover;
 }
 .div_item_details{
     height: 100%;
