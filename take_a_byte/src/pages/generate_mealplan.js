@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './css/generate_mealplan.css';
 import NavigationBar from "../components/NavigationBar/navigation_bar";
 import axios from "axios";
+import { jsPDF } from "jspdf";
 
 const mariaGmailKEY = 'cf25781960af46d3beba5d21ac99b74b'
 const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
@@ -36,12 +37,17 @@ function GenerateMealPlan() {
     }
 
     function buildMealPlan() {
-        axios.post("http://localhost:3000/pages/generate_mealplan", {
-            personalMP: personalMP
-        }).then(r => {
-            setFile(r)
-            console.log('server response is', r);
-        })
+        const doc = new jsPDF();
+
+        doc.text("Meal Plan", 10, 10);
+        doc.output('dataurlnewwindow');
+
+        // axios.post("http://localhost:3000/pages/generate_mealplan", {
+        //     personalMP: personalMP
+        // }).then(r => {
+        //     setFile(r)
+        //     console.log('server response is', r);
+        // })
     }
 
     return (
