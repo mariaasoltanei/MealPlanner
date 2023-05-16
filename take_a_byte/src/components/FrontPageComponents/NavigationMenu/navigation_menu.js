@@ -28,7 +28,7 @@ function SideNav() {
                 </Link>
                 <Link style={linksStyle} to="../pages/weekly_menu">
                     <li>
-                        <span><img src={iconWeeklyMenu}/><p>WEEKLY MENU</p></span>
+                        <span><img src={iconWeeklyMenu}/><p>MEAL PLANS</p></span>
                     </li>
                 </Link>
                 <Link style={linksStyle} to="../pages/about">

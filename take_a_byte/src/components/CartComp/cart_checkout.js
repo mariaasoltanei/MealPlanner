@@ -31,7 +31,7 @@ function CartCheckout() {
 
     return (
         <div className="div_cart_checkout">
-            <h3 id="h3_checkout">Checkout</h3>
+            <h3 id="h3_checkout">Facts</h3>
             <p id="free">Total price: {totalQuantities * price} RON</p>
             <button onClick={postProduct}>Order</button>
         </div>

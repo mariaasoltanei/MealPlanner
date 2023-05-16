@@ -24,16 +24,21 @@ function CartList() {
     };
      */
     const {user, setUser} = useContext(UserContext);
-    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
+    const {totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove} = useStateContext();
     return (
         <div className="div_cart_list">
-            <h3 id = "h3_cart">Your cart</h3>
+            <h3 id="h3_cart">Favourite recipes</h3>
             {
-                cartItems.length == 0 ? <p>Your cart is empty :(</p> : (cartItems.map(i => <CartItem image={i.image} title = {i.title}/>))
+                cartItems.length == 0 ? <p>Favourites list empty :(</p> : (cartItems.map(i => <CartItem image={i.image}
+                                                                                                        title={i.title}
+                                                                                                        calories={i.nutrition.nutrients[0].amount}
+                                                                                                        time={i.readyInMinutes}
+                                                                                                        item={i}/>)) //item={i}
             }
         </div>
     );
 }
+
 //
 
 export default CartList;

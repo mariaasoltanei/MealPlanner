@@ -1,0 +1,35 @@
+YOUR MEAL PLAN 
+Monday, 1599.96 kcal | 39.31 g protein | 174.22 g carbohydrates | 91.05 g fat
+	 Meal 1: Blueberry Cinnamon Porridge - https://spoonacular.com/blueberry-cinnamon-porridge-635446
+	 Meal 2: Moroccan chickpea and lentil stew - https://spoonacular.com/moroccan-chickpea-and-lentil-stew-652417
+	 Meal 3: Broccoli and Chickpea Rice Salad - https://spoonacular.com/broccoli-and-chickpea-rice-salad-794349
+
+Tuesday, 1599.96 kcal | 39.31 g protein | 174.22 g carbohydrates | 91.05 g fat
+	 Meal 1: Blueberry Cinnamon Porridge - https://spoonacular.com/blueberry-cinnamon-porridge-635446
+	 Meal 2: Moroccan chickpea and lentil stew - https://spoonacular.com/moroccan-chickpea-and-lentil-stew-652417
+	 Meal 3: Broccoli and Chickpea Rice Salad - https://spoonacular.com/broccoli-and-chickpea-rice-salad-794349
+
+Wednesday, 1600.09 kcal | 56.13 g protein | 181.13 g carbohydrates | 79.7 g fat
+	 Meal 1: Roasted Plum Oatmeal - https://spoonacular.com/roasted-plum-oatmeal-658624
+	 Meal 2: Broccolini Quinoa Pilaf - https://spoonacular.com/broccolini-quinoa-pilaf-715769
+	 Meal 3: Red Kidney Bean Jambalaya - https://spoonacular.com/red-kidney-bean-jambalaya-782601
+
+Thursday, 1599.96 kcal | 39.31 g protein | 174.22 g carbohydrates | 91.05 g fat
+	 Meal 1: Blueberry Cinnamon Porridge - https://spoonacular.com/blueberry-cinnamon-porridge-635446
+	 Meal 2: Moroccan chickpea and lentil stew - https://spoonacular.com/moroccan-chickpea-and-lentil-stew-652417
+	 Meal 3: Broccoli and Chickpea Rice Salad - https://spoonacular.com/broccoli-and-chickpea-rice-salad-794349
+
+Friday, 1599.94 kcal | 56.11 g protein | 182.7 g carbohydrates | 77.16 g fat
+	 Meal 1: Roasted Plum Oatmeal - https://spoonacular.com/roasted-plum-oatmeal-658624
+	 Meal 2: Noodles and Veggies With Peanut Sauce - https://spoonacular.com/noodles-and-veggies-with-peanut-sauce-653251
+	 Meal 3: Herbivoracious' White Bean and Kale Soup - https://spoonacular.com/herbivoracious-white-bean-and-kale-soup-646738
+
+Saturday, 1599.96 kcal | 39.31 g protein | 174.22 g carbohydrates | 91.05 g fat
+	 Meal 1: Blueberry Cinnamon Porridge - https://spoonacular.com/blueberry-cinnamon-porridge-635446
+	 Meal 2: Moroccan chickpea and lentil stew - https://spoonacular.com/moroccan-chickpea-and-lentil-stew-652417
+	 Meal 3: Broccoli and Chickpea Rice Salad - https://spoonacular.com/broccoli-and-chickpea-rice-salad-794349
+
+Sunday, 1599.96 kcal | 39.31 g protein | 174.22 g carbohydrates | 91.05 g fat
+	 Meal 1: Blueberry Cinnamon Porridge - https://spoonacular.com/blueberry-cinnamon-porridge-635446
+	 Meal 2: Moroccan chickpea and lentil stew - https://spoonacular.com/moroccan-chickpea-and-lentil-stew-652417
+	 Meal 3: Broccoli and Chickpea Rice Salad - https://spoonacular.com/broccoli-and-chickpea-rice-salad-794349

@@ -2,116 +2,82 @@ import React, {useEffect, useState} from "react";
 import NavigationBar from "../components/NavigationBar/navigation_bar";
 import './css/weekly_menu.css'
 import WeeklyMenuComp from "../components/Weekly Menu/weekly_menu_comp";
-import axios from "axios";
+import {useNavigate} from "react-router-dom";
+import food1 from '../assets/images/food1.jpg'
+import food2 from '../assets/images/food2.jpg'
+import food3 from '../assets/images/food3.jpg'
 
 const mariaGmailKEY = 'cf25781960af46d3beba5d21ac99b74b'
 const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
 const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
 const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
 const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = anaYahooKEY
+const KEY = remusGmailKEY
+
 function WeeklyMenu() {
-    const numberOfItems = 10;
-    const weekNO = 5;
-    //ENDPOINTS INFO -> type = breakfast, main course, salad ; diet = signature -> whole30 vegetarian -> vegetarian vegan -> vegan
-    const signatureBreakfastEndpoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=breakfast&diet=whole30&apiKey=${KEY}&addRecipeInformation=false`
-    const vegetarianBreakfastEndpoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=breakfast&diet=vegetarian&apiKey=${KEY}&addRecipeInformation=false`
-    const veganBreakfastEndpoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=breakfast&diet=vegan&apiKey=${KEY}&addRecipeInformation=false`
-    const [signatureBreakfast, setSignatureBreakfast] = useState([]);
-    const [vegetarianBreakfast, setVegetarianBreakfast] = useState([]);
-    const [veganBreakfast, setVeganBreakfast] = useState([]);
-    const [showBreakfast, setShowBreakfast] = useState(false);
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `../pages/generate_mealplan`;
+        navigate(path);
+    }
+    const mealPlan1EP = `https://api.spoonacular.com/mealplanner/generate?timeFrame=day&apiKey=${KEY}`
+    const [mealPlan1, setMealPlan1] = useState(null);
 
+    const mealPlan2EP = `https://api.spoonacular.com/mealplanner/generate?timeFrame=day&apiKey=${KEY}`
+    const [mealPlan2, setMealPlan2] = useState(null);
+    // const [showMP2, setShowMP2] = useState(false);
 
-    const signatureLunchEndPoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=salad&diet=whole30&apiKey=${KEY}&addRecipeInformation=false`
-    const vegetarianLunchEndPoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=salad&diet=vegetarian&apiKey=${KEY}&addRecipeInformation=false`
-    const veganLunchEndPoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=salad&diet=vegan&apiKey=${KEY}&addRecipeInformation=false`
-    const [signatureLunch, setSignatureLunch] = useState([]);
-    const [vegetarianLunch, setVegetarianLunch] = useState([]);
-    const [veganLunch, setVeganLunch] = useState([]);
-    const [showLunch, setShowLunch] = useState(false);
+    const mealPlan3EP = `https://api.spoonacular.com/mealplanner/generate?timeFrame=day&apiKey=${KEY}`
+    const [mealPlan3, setMealPlan3] = useState(null);
+    // const [showMP3, setShowMP3] = useState(false);
 
-    const signatureDinnerEndPoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=lunch&diet=whole30&apiKey=${KEY}&addRecipeInformation=false`
-    const vegetarianDinnerEndPoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=lunch&diet=vegetarian&apiKey=${KEY}&addRecipeInformation=false`
-    const veganDinnerEndPoint = `https://api.spoonacular.com/recipes/complexSearch?number=${numberOfItems}&type=lunch&diet=vegan&apiKey=${KEY}&addRecipeInformation=false`
-    const [signatureDinner, setSignatureDinner] = useState([]);
-    const [vegetarianDinner, setVegetarianDinner] = useState([]);
-    const [veganDinner, setVeganDinner] = useState([]);
-    const [showDinner, setShowDinner] = useState(false);
-    /*useEffect(() => {
-        axios.get(signatureBreakfastEndpoint)
-            .then(res => {
-                const r = res.data.results;
-                setSignatureBreakfast(r);
-                setShowSignatureBreakfast(true);
-            })
-        axios.get(vegetarianBreakfastEndpoint)
-            .then(res => {
-                const r = res.data.results;
-                setVegetarianBreakfast(r);
-                setShowVegetarianBreakfast(true);
-            })
-        axios.get(veganBreakfastEndpoint)
-            .then(res => {
-                const r = res.data.results;
-                setVeganBreakfast(r);
-                setShowVeganBreakfast(true);
-            })
-    }, []);*/
-    useEffect(()=>{
+    const [showMP, setShowMP] = useState(false);
+
+    useEffect(() => {
         Promise.all([
-            fetch(signatureBreakfastEndpoint),
-            fetch(vegetarianBreakfastEndpoint),
-            fetch(veganBreakfastEndpoint),
-            fetch(signatureLunchEndPoint),
-            fetch(vegetarianLunchEndPoint),
-            fetch(veganLunchEndPoint),
-            fetch(signatureDinnerEndPoint),
-            fetch(vegetarianDinnerEndPoint),
-            fetch(veganDinnerEndPoint)
+            fetch(mealPlan1EP),
+            fetch(mealPlan2EP),
+            fetch(mealPlan3EP)
         ]).then(function (responses) {
             return Promise.all(responses.map(function (response) {
                 return response.json();
             }));
         }).then(function (data) {
-            setSignatureBreakfast(data[0].results);
-            setVegetarianBreakfast(data[1].results);
-            setVeganBreakfast(data[2].results);
-            setShowBreakfast(true);
-
-            setSignatureLunch(data[3].results);
-            setVegetarianLunch(data[4].results);
-            setVeganLunch(data[5].results);
-            setShowLunch(true);
-
-            setSignatureDinner(data[6].results);
-            setVegetarianDinner(data[7].results);
-            setVeganDinner(data[8].results);
-            setShowDinner(true);
+            setMealPlan1(data[0]);
+            setMealPlan2(data[1]);
+            setMealPlan3(data[2]);
+            setShowMP(true)
+            console.log(data)
         }).catch(function (error) {
             console.log(error);
         });
-    },[])
+    }, [])
     return (
         <div className="div_weeklyM_page">
             <NavigationBar/>
             <div className="div_weeklyM_content">
-                <WeeklyMenuComp title="Signature menu"
-                                menuImage={showBreakfast && signatureDinner[weekNO].image}
-                                breakfastTitle = {showBreakfast && signatureBreakfast[weekNO].title}
-                                lunchTitle = { showLunch && signatureLunch[weekNO].title}
-                                dinnerTitle = { showDinner &&  signatureDinner[weekNO].title}/>
-                <WeeklyMenuComp title="Vegetarian menu"
-                                menuImage={showBreakfast && vegetarianBreakfast[weekNO].image}
-                                breakfastTitle = {showBreakfast && vegetarianBreakfast[weekNO].title}
-                                lunchTitle = { showLunch && vegetarianLunch[weekNO].title}
-                                dinnerTitle = { showDinner &&  vegetarianDinner[weekNO].title}/>
-                <WeeklyMenuComp title="Vegan menu"
-                                menuImage={showBreakfast && veganBreakfast[weekNO].image}
-                                breakfastTitle = {showBreakfast && veganBreakfast[weekNO].title}
-                                lunchTitle = { showLunch && veganLunch[weekNO].title}
-                                dinnerTitle = { showDinner &&  veganDinner[weekNO].title}/>
 
+                <WeeklyMenuComp title="Meal Plan"
+                                menuImage={food1}
+                                calories={showMP && mealPlan1.nutrients.calories}
+                                breakfastTitle={showMP && mealPlan1.meals[0].title}
+                                lunchTitle={showMP && mealPlan1.meals[1].title}
+                                dinnerTitle={showMP && mealPlan1.meals[2].title}/>
+                <WeeklyMenuComp title="Meal Plan"
+                                menuImage={food2}
+                                calories={showMP && mealPlan2.nutrients.calories}
+                                breakfastTitle={showMP && mealPlan2.meals[0].title}
+                                lunchTitle={showMP && mealPlan2.meals[1].title}
+                                dinnerTitle={showMP && mealPlan2.meals[2].title}/>
+                <WeeklyMenuComp title="Meal Plan"
+                                menuImage={food3}
+                                calories={showMP && mealPlan3.nutrients.calories}
+                                breakfastTitle={showMP && mealPlan3.meals[0].title}
+                                lunchTitle={showMP && mealPlan3.meals[1].title}
+                                dinnerTitle={showMP && mealPlan3.meals[2].title}/>
+            </div>
+            <div className="div_gen_mp">
+                <button id="btn_gen_mp" onClick={routeChange}>Generate meal plan</button>
             </div>
         </div>
     );

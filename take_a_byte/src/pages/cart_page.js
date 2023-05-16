@@ -10,7 +10,7 @@ function Cart() {
             <NavigationBar/>
             <div className="div_cart_content">
                 <CartList/>
-                <CartCheckout/>
+                {/*<CartCheckout/>*/}
             </div>
         </div>
     );
