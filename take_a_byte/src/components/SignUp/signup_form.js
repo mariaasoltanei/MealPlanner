@@ -14,10 +14,7 @@ function SignUpForm() {
     let navigate = useNavigate();
 
     const insertUser = () => {
-        if (!emailRegex.test(email.value)) {
-            alert("Email not good");
-            return;
-        }
+
         axios.post("http://localhost:3000/pages/sign_up", {
             firstName: firstName,
             lastName: lastName,
