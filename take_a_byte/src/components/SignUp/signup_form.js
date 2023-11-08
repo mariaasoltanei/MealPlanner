@@ -14,17 +14,21 @@ function SignUpForm() {
     let navigate = useNavigate();
 
     const insertUser = () => {
+
         axios.post("http://localhost:3000/pages/sign_up", {
             firstName: firstName,
             lastName: lastName,
             email: email,
             userPassword: userPassword
         }).then(r => {
-                navigate("../pages/browse_menu");
-                setUser(r.data[0]);
-                //console.log(user);
+            navigate("../pages/browse_menu");
+            setUser(r.data[0]);
+            //console.log(user);
         })
     };
+    const emailRegex = new RegExp(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+
+
     return (
         <div className="div_signup_form">
             <label className="signup_label">First Name</label>
@@ -36,7 +40,7 @@ function SignUpForm() {
                 setLastName(e.target.value);
             }}/>
             <label className="signup_label">Email</label>
-            <input type="text" name="userEmail" onChange={(e) => {
+            <input type="email" name="userEmail" onChange={(e) => {
                 setEmail(e.target.value);
             }}/>
             <label className="signup_label">Password</label>

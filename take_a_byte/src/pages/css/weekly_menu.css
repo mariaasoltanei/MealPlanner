@@ -8,11 +8,35 @@
 }
 
 .div_weeklyM_content {
-    height: 90%;
+    height: 80%;
     width: 100%;
     display: flex;
     margin: 0 auto;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.div_gen_mp {
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#btn_gen_mp {
+    align-self: center;
+    background: #4fd3c4;
+    border-radius: 999px;
+    border: none;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Lato Regular";
+    font-size: 16px;
+    line-height: 18px;
+    padding: 8px 15px;
+    width: 20%;
+    margin-bottom: 15px;
 }
