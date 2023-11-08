@@ -116,8 +116,8 @@ function saveMP(mealPlanObject, calories) {
 
 const database = mySQL.createConnection({
     host: "localhost",
-    user: "root",
-    password: "root",
+    user: process.env.user,
+    password: process.env.user,
     database: "take_a_byte"
 });
 database.connect(function (err) {

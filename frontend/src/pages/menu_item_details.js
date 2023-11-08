@@ -5,12 +5,7 @@ import axios from "axios";
 import {useParams} from "react-router-dom";
 import {useStateContext} from "../context/state_context";
 
-const mariaGmailKEY = 'cf25781960af46d3beba5d21ac99b74b'
-const remusGmailKEY = '25450dcbda614879a008851e856a08aa'
-const anaYahooKEY = 'ad136a643cda4673a2792cf3503caac1'
-const mariaGmail2KEY = '484db897baef41f0b41aeecdbacba3c5'
-const mariaYAHOO = 'bc1070e4773549f08c305195f2fb05c7'
-const KEY = remusGmailKEY
+const KEY = process.env.mariaGmailKEY
 
 function MenuItemDetails() {
     const {menuItemID} = useParams();
